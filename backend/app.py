@@ -16,6 +16,7 @@ from config import (
 )
 from datetime import datetime
 import time
+import os
 
 app = FastAPI(
     title=API_TITLE,
@@ -109,13 +110,17 @@ def health_check():
             "message": f"Health check failed: {str(e)}"
         }
 
+
+
 if __name__ == "__main__":
     import uvicorn
-    from config import SERVER_HOST, SERVER_PORT, SERVER_RELOAD
-    
+    from config import SERVER_HOST, SERVER_RELOAD
+
+    port = int(os.environ.get("PORT", 8000))  # Render provides PORT
+
     uvicorn.run(
-        app,
-        host=SERVER_HOST,
-        port=SERVER_PORT,
+        "app:app",
+        host="0.0.0.0",   # must be 0.0.0.0 for Render
+        port=port,
         reload=SERVER_RELOAD
     )
