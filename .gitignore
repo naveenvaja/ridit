@@ -1,0 +1,16 @@
+# Node modules and build artifacts
+node_modules/
+build/
+
+# Python env
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets
+backend/serviceAccountKey.json
+ridit1-396d3-default-rtdb-export.json
+
+# IDE files
+.vscode/
+.DS_Store
