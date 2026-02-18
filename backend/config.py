@@ -56,9 +56,9 @@ FRONTEND_API_BASE_URL = os.getenv("FRONTEND_API_BASE_URL", "https://ridit-fronte
 # ────────────────────────────────────────────────
 class APIEndpoints:
     """All API endpoint prefixes defined here"""
-    AUTH = "/api/auth"
-    SELLER = "/api/seller"
-    COLLECTOR = "/api/collector"
+    AUTH = "/auth"
+    SELLER = "/seller"
+    COLLECTOR = "/collector"
     ADMIN = "/admin"
     HEALTH = "/health"
 
