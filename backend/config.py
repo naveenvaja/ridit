@@ -48,13 +48,8 @@ FIREBASE_SERVICE_ACCOUNT_PATH = os.getenv(
 # ────────────────────────────────────────────────
 # Frontend Configuration
 # ────────────────────────────────────────────────
-<<<<<<< HEAD
-FRONTEND_URL = os.getenv("FRONTEND_URL", "https://ridit-frontend.onrender.com/")
-FRONTEND_API_BASE_URL = os.getenv("FRONTEND_API_BASE_URL", "https://ridit-frontend.onrender.com/")
-=======
 FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
 FRONTEND_API_BASE_URL = os.getenv("FRONTEND_API_BASE_URL", "http://localhost:8000")
->>>>>>> 8ad4eb1 (updated setting issue for google login user)
 
 # ────────────────────────────────────────────────
 # API Endpoints
