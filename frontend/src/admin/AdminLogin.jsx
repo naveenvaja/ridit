@@ -17,7 +17,7 @@ const AdminLogin = () => {
 
     try {
       const apiBase = process.env.REACT_APP_API_URL || "https://ridit-frontend.onrender.com";
-      const res = await fetch(`${apiBase}api/admin/login`, {
+      const res = await fetch(`${apiBase}/admin/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password })
