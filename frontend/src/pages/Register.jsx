@@ -283,7 +283,7 @@ export default function Register() {
         </form>
 
         <p className="auth-link">
-          Already have an account? <a href="/login/seller">Seller sign in</a>
+          Already have an account? <a href="/#/login/seller">Seller sign in</a>
         </p>
       </div>
     </div>
