@@ -49,7 +49,7 @@ FIREBASE_SERVICE_ACCOUNT_PATH = os.getenv(
 # Frontend Configuration
 # ────────────────────────────────────────────────
 FRONTEND_URL = os.getenv("FRONTEND_URL", "https://ridit-frontend.onrender.com/")
-FRONTEND_API_BASE_URL = os.getenv("FRONTEND_API_BASE_URL", "https://ridit-frontend.onrender.com//api")
+FRONTEND_API_BASE_URL = os.getenv("FRONTEND_API_BASE_URL", "https://ridit-frontend.onrender.com/api")
 
 # ────────────────────────────────────────────────
 # API Endpoints
