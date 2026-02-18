@@ -219,13 +219,22 @@ def google_login(google_data: GoogleRegister):
                 detail="User not found. Please register first with Google."
             )
         
-        # Return user data with their stored user_type
+        # Issue JWT token for the user
+        payload = {
+            "user_id": user_id,
+            "user_type": user_data.get("user_type", "seller"),
+            "exp": datetime.utcnow() + timedelta(hours=USER_JWT_EXPIRES_HOURS)
+        }
+        token = jwt.encode(payload, USER_JWT_SECRET, algorithm=USER_JWT_ALGORITHM)
+
+        # Return user data with their stored user_type and token
         return {
             "id": user_id,
             "name": user_data.get("name"),
             "email": user_data.get("email"),
             "phone": user_data.get("phone", ""),
             "user_type": user_data.get("user_type", "seller"),
+            "token": token,
             "message": "Google login successful"
         }
     except HTTPException:

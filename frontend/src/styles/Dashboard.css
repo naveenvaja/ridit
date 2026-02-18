@@ -1,3 +1,80 @@
+/* Mobile Responsive Enhancements for SellerDashboard */
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 14px 8px;
+    font-size: 1.05em;
+  }
+  .dashboard-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 2vw;
+  }
+  .header-logo {
+    font-size: 20px;
+  }
+  .header-right {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    align-items: stretch;
+  }
+  .dashboard-main {
+    padding: 16px 4px;
+  }
+  .section-title {
+    font-size: 18px;
+  }
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .item-card {
+    padding: 12px 6px;
+    font-size: 15px;
+  }
+  .item-title {
+    font-size: 15px;
+  }
+  .item-description {
+    font-size: 13px;
+  }
+  .item-meta {
+    font-size: 12px;
+    gap: 6px;
+    padding: 8px 0;
+  }
+  .btn, .btn-primary, .btn-secondary, .btn-danger, .btn-success {
+    min-height: 44px;
+    font-size: 15px;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .btn-small {
+    min-height: 38px;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  .modal-card {
+    padding: 16px 6px;
+    max-width: 98vw;
+  }
+  .modal-overlay {
+    padding: 4px;
+  }
+  .empty-state {
+    padding: 32px 4px;
+  }
+  .image-modal-content {
+    max-width: 98vw;
+    max-height: 80vh;
+  }
+  .full-size-image {
+    max-width: 98vw;
+    max-height: 80vh;
+  }
+}
 /* Dashboard Styles - Professional Modern Design */
 
 :root {

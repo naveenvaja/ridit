@@ -50,6 +50,10 @@ export default function Login() {
         user_type: "seller",
       });
 
+      // Store JWT token from backend if present
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
+      }
       login(response.data);
 
       // Prefetch likely-needed data to make dashboard load feel instant
@@ -98,6 +102,10 @@ export default function Login() {
 
         if (!mounted) return;
 
+        // Store JWT token from backend if present
+        if (response.data.token) {
+          localStorage.setItem("token", response.data.token);
+        }
         login(response.data);
 
         // Prefetch likely-needed data to make dashboard load feel instant
