@@ -207,7 +207,7 @@ export default function Login() {
         </form>
 
         <div className="auth-link">
-          Don't have an account? <a href="/register/seller">Create a seller account</a>
+          Don't have an account? <a href="/#/register/seller">Create a seller account</a>
         </div>
       </div>
     </div>
