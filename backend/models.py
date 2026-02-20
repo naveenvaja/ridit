@@ -60,7 +60,7 @@ class UserRegister(UserBase):
     user_type: Literal["seller", "collector"] = "seller"
 
 class GoogleRegister(BaseModel):
-    id_token: str
+    id_token: Optional[str] = None
     name: str
     email: str
     user_type: Literal["seller", "collector"] = "seller"

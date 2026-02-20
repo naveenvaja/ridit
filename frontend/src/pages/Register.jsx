@@ -1,12 +1,14 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { authApi } from "../api";
+import { useAuth } from "../context/AuthContext";
 import { auth } from "../firebase";
 import { GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult } from "firebase/auth";
 import "styles/Auth.css";
 
 export default function Register() {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   // Always seller for this page
   const userType = "seller";
@@ -74,7 +76,8 @@ export default function Register() {
         user_type: userType,
       };
 
-      await authApi.googleRegister(payload);
+      const response = await authApi.googleRegister(payload);
+      login(response.data);
       setSuccess("Registration successful — redirecting to dashboard...");
       setTimeout(() => navigate("/seller/dashboard", { state: { registered: true } }), 900);
     } catch (err) {

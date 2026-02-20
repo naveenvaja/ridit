@@ -180,12 +180,20 @@ def google_register(google_data: GoogleRegister):
             }
             database.child("users").child(user_id).set(user_dict)
         
-        # Return user data
+        # Issue JWT token for the user (same as google-login)
+        payload = {
+            "user_id": user_id,
+            "user_type": google_data.user_type,
+            "exp": datetime.utcnow() + timedelta(hours=USER_JWT_EXPIRES_HOURS)
+        }
+        token = jwt.encode(payload, USER_JWT_SECRET, algorithm=USER_JWT_ALGORITHM)
+
         return {
             "id": user_id,
             "name": google_data.name,
             "email": google_data.email,
             "user_type": google_data.user_type,
+            "token": token,
             "message": "Google authentication successful"
         }
     except HTTPException:
@@ -219,13 +227,21 @@ def google_login(google_data: GoogleRegister):
                 detail="User not found. Please register first with Google."
             )
         
-        # Return user data with their stored user_type
+        # Issue JWT token for the user (same as regular login)
+        payload = {
+            "user_id": user_id,
+            "user_type": user_data.get("user_type", "seller"),
+            "exp": datetime.utcnow() + timedelta(hours=USER_JWT_EXPIRES_HOURS)
+        }
+        token = jwt.encode(payload, USER_JWT_SECRET, algorithm=USER_JWT_ALGORITHM)
+
         return {
             "id": user_id,
             "name": user_data.get("name"),
             "email": user_data.get("email"),
             "phone": user_data.get("phone", ""),
             "user_type": user_data.get("user_type", "seller"),
+            "token": token,
             "message": "Google login successful"
         }
     except HTTPException:

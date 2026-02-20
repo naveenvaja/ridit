@@ -52,6 +52,12 @@ export default function Login() {
 
       login(response.data);
 
+      // Print token to console after login
+      const token = localStorage.getItem("token");
+      if (token) {
+        console.log("Your JWT token:", token);
+      }
+
       // Prefetch likely-needed data to make dashboard load feel instant
       (async () => {
         try {
@@ -99,6 +105,12 @@ export default function Login() {
         if (!mounted) return;
 
         login(response.data);
+
+        // Print token to console after login
+        const token = localStorage.getItem("token");
+        if (token) {
+          console.log("Your JWT token:", token);
+        }
 
         // Prefetch likely-needed data to make dashboard load feel instant
         (async () => {
