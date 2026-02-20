@@ -138,7 +138,7 @@ export default function SellerDashboard() {
       localStorage.setItem('user', JSON.stringify(updatedUser));
       alert('Profile updated');
       setShowSettings(false);
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       alert(err.response?.data?.detail || 'Failed to update profile');
     }
