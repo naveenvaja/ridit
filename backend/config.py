@@ -60,7 +60,7 @@ class APIEndpoints:
     """All API endpoint prefixes defined here"""
     AUTH = "/auth"
     SELLER = "/seller"
-    COLLECTOR = "/collector"
+    COLLECTOR = "/#/collector"
     ADMIN = "/admin"
     HEALTH = "/health"
 
