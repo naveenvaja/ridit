@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+venv/
+ENV/
+build/
+dist/
+.eggs/
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase
+serviceAccountKey.json
+firebase_config.py
+
+# Logs
+*.log
+
+# Others
+*.sqlite3
+*.db
+
+# Ignore environment files
+.env.*
