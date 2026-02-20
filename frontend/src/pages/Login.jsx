@@ -69,7 +69,7 @@ export default function Login() {
         }
       })();
 
-      navigate("/seller/dashboard");
+      navigate("/#/seller/dashboard");
     } catch (err) {
       const code = err?.code || "";
       if (
@@ -122,7 +122,7 @@ export default function Login() {
           }
         })();
 
-        navigate("/seller/dashboard");
+        navigate("/#/seller/dashboard");
       } catch (err) {
         console.warn("Redirect login error:", err);
       }
@@ -149,7 +149,7 @@ export default function Login() {
           console.debug('Prefetch failed', e);
         }
       })();
-      navigate("/seller/dashboard");
+      navigate("/#/seller/dashboard");
     } catch (err) {
       setError(err.response?.data?.detail || "Login failed");
     } finally {
