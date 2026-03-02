@@ -40,7 +40,7 @@ function App() {
           <Route path="/seller" element={<SellerHome />} /> */}
 
           {/* Collector Landing & Auth */}
-          <Route path="/collector" element={<CollectorHome />} />
+          <Route path="/#/collector" element={<CollectorHome />} />
           <Route path="/collector/register" element={<CollectorRegister />} />
           <Route path="/collector/login" element={<CollectorLogin />} />
 
