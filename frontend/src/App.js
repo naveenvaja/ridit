@@ -52,7 +52,7 @@ function App() {
           <Route path="/collector/dashboard" element={<CollectorDashboard />} />
 
           {/* Admin Routes */}
-          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/#/admin" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
           {/* Fallback */}
